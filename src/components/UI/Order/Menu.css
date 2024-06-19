@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+:root {
+  --header-height: 3.5rem;
+
+  --primary-color: hsl(359, 100%, 35%);
+  --primary-color-alt: hsl(359, 100%, 25%);
+  --title-color: hsl(19, 16%, 15%);
+  --text-color: hsl(19, 16%, 35%);
+  --text-color-light: hsl(19, 8%, 55%);
+  --body-color: hsl(36, 52%, 87%);
+  --container-color: hsl(19, 100%, 97%);
+
+  /* .5rem=8px | 1rem=16px --body-font: "Poppins", sans-serif; */
+  --title-font: "Titan One", cursive;
+  --subtitle-font: "Dancing Script", cursive;
+
+  --font-2xl: 2.5rem;
+  --font-xl: 2rem;
+  --font-lg: 1.25rem;
+  --font-md: 1rem;
+  --font-sm: 0.938rem;
+  --font-xm: 0.813rem;
+
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+
+.c__arrowOrder {
+  background: transparent;
+  border: none;
+  border-radius: 4rem;
+  font-weight: var(--font-medium);
+  transition: background 0.3s;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.menu__img {
+  object-fit: contain;
+  position: relative;
+  width: 30rem;
+  height: auto;
+  border-radius: var(--font-lg);
+  box-sizing: border-box;
+  filter: drop-shadow(0 0px 10px #000);
+  transition: all ease-in-out 0.6s;
+
+}
+
+.menu__img:hover {
+  transform: translateY(-10px);
+}
+
+@media screen and (max-width: 1024px) {
+  .menu__img {
+    width: 10rem;
+    max-width: 100%;
+  }
+}
+
+.c-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.c__containerA {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c__Container {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .c__Container {
+    width: 100%;
+    height: 35rem;
+  }
+
+  .selectedPizzaTitle {
+    font-size: 5rem;
+  }
+
+}
+
+
+.c__arrowOrder svg {
+  color: var(--title-color);
+  transform: scale(-1);
+  transition: transform 0.3s;
+}
+
+.c__arrowOrder:hover svg {
+  transform: translateX(0.25rem);
+}
+
+
+@media screen and (max-width: 1024px) {
+
+  .c__order {
+    word-wrap: break-word;
+    font-size: 10px;
+  }
+
+
+}
+
+.c__order {
+  box-sizing: border-box;
+  width: 20rem;
+  height: auto;
+  order: -1;
+}
+
+.c__OrderList {
+  padding-block: 2rem;
+}
+
+.c-CurrentPizzaOrder {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.c__img {
+  width: 30%;
+  object-fit: contain;
+  height: 30rem;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* For phones (small devices) */
+@media (max-width: 480px) {
+  .c__img {
+    width: 100%;
+    height: auto;
+  }
+
+  .selectedPizzaList {
+    flex-wrap: wrap;
+  }
+
+  .selectedPizzaTitle {
+    font-size: 1rem;
+  }
+
+
+}
+
+/* For tablets (medium devices) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .c__img {
+    width: 75%;
+    height: auto;
+  }
+
+  .c__Container {
+    flex-wrap: wrap;
+  }
+
+  .selectedPizzaList {
+    flex-wrap: wrap;
+  }
+
+}
+
+/* For small monitors */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .c__img {
+    width: 50%;
+    height: auto;
+  }
+}
+
+/* For large monitors */
+@media (min-width: 1025px) {
+  .c__img {
+    width: 30%;
+    height: 30rem;
+  }
+}
+
+.c__buttonOrderCart {
+  display: flex;
+  justify-content: end;
+  align-items: normal;
+  column-gap: 1.5rem;
+}
+
+
+.pizza-Header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.pizza-titleOrder {
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  font-size: var(--font-2xl);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: hsl(36, 100%, 96%);
+  stroke-width: 2px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #401c10;
+  stroke: #401c10;
+  text-shadow: 6px 6px 0px #9f7060;
+}
+
+.pizza-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .pizza-item {
+    padding: 1rem;
+  }
+}
+
+
+.pizza-item {
+  position: relative;
+  background-color: var(--container-color);
+  box-shadow: 0 0 5px var(--text-color);
+  padding: 2rem 4rem;
+  gap: 2rem;
+  object-fit: contain;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pizza-img {
+  object-fit: contain;
+  box-sizing: border-box;
+  aspect-ratio: 2/2;
+  width: 15rem;
+  height: auto;
+}
+
+.pizza-cancel {
+  border: none;
+  font-size: 1.2rem;
+  color: var(--primary-color-light);
+  background: var(--container-color);
+}
+
+.pizza-counterBuy {
+  background-color: var(--primary-color-alt);
+  color: var(--title-color);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.selectedPizza {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.selectedPizzaContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  background-color: var(--body-color);
+  /* Adjust background color as needed */
+  padding: 20px;
+  /* Adjust padding as needed */
+  box-shadow: 0 10px 20px rgb(0, 0, 0);
+  /* Optional, for a nice shadow */
+  border-radius: 8px;
+  /* Optional, for rounded corners */
+}
+
+
+.selectedCloseButton {
+  position: absolute;
+  background: none;
+  color: var(--title-color);
+  border: none;
+  top: -40px;
+  right: -10px;
+}
+
+.selectedPizzaList {
+  display: flex;
+  position: relative;
+  margin-top: 2rem;
+  justify-content: space-evenly;
+  gap: 2rem;
+  align-items: center;
+}
+
+.pizza-itemTitle {
+  font-family: var(--title-font);
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: hsl(36, 100%, 96%);
+  stroke-width: 2px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #401c10;
+  stroke: #401c10;
+  text-shadow: 6px 6px 0px #9f7060;
+}
+
+
+
+.selectedPizzaInfo {
+  box-sizing: border-box;
+  position: relative;
+  width: 10rem;
+  height: auto;
+}
+
+.selectedPizzaButton {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+
+.selectedPizzaTitle {
+  line-height: var(--font-2xl);
+  font-family: var(--title-font);
+  font-size: var(--font-2xl);
+  background-color: var(--body-color);
+  color: hsl(36, 100%, 96%);
+  stroke-width: 2px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #401c10;
+  stroke: #401c10;
+  text-shadow: 6px 6px 0px #9f7060;
+}
+
+@media screen and (min-width: 150px) and (max-width: 450px) {
+  .selectedPizzaTitle {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 455px) and (min-width:668px) {
+  .selectedPizzaTitle {
+    font-size: 3rem;
+  }
+}

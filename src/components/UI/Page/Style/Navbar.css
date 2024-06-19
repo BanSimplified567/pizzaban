@@ -1,0 +1,156 @@
+:root {
+  --header-height: 3.5rem;
+
+  --primary-color: hsl(359, 100%, 35%);
+  --primary-color-alt: hsl(359, 100%, 25%);
+  --title-color: hsl(19, 16%, 15%);
+  --text-color: hsl(19, 16%, 35%);
+  --text-color-light: hsl(19, 8%, 55%);
+  --body-color: hsl(36, 52%, 87%);
+  --container-color: hsl(19, 100%, 97%);
+
+  --body-font: "Poppins", sans-serif;
+  --title-font: "Titan One", cursive;
+  --subtitle-font: "Dancing Script", cursive;
+
+  --font-2xl: 2.5rem;
+  --font-xl: 2rem;
+  --font-lg: 1.25rem;
+  --font-md: 1rem;
+  --font-sm: 0.938rem;
+  --font-xm: 0.813rem;
+
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+body.dark-theme {
+  --primary-color: hsl(359, 100%, 35%);
+  --primary-color-alt: hsl(359, 100%, 25%);
+  --title-color: hsl(19, 24%, 85%);
+  --text-color: hsl(19, 16%, 65%);
+  --body-color: hsl(0, 7%, 8%);
+  --container-color: hsl(19, 10%, 5%);
+}
+
+.darkmode {
+  background-color: transparent;
+  border: none;
+  color: var(--title-color);
+}
+
+.navLinkHeader {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.n-NameLogo {
+  display: flex;
+  align-items: center;
+}
+
+.navLinkPathname {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navLink {
+  position: relative;
+  color: var(--title-color);
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.navLink:hover {
+  border-color: var(--title-color);
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  font-size: 14px;
+}
+
+.tooltip-text::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.navLink:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navbar-LogoIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .navLinkPathname {
+    column-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navLinkHeader {
+    font-size: 0.8rem;
+    gap: 2rem;
+    justify-content: space-evenly;
+    margin: 0 auto;
+  }
+
+  .navLinkPathname {
+    column-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navLinkPathname {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+}
+
+.nav__logo {
+  color: var(--primary-color);
+  font-size: var(--font-lg);
+  font-weight: var(--font-semi-bold);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
+.home__img {
+  width: var(--font-xl);
+  margin: 0 auto;
+  border-radius: 50%;
+  filter: drop-shadow(0 1rem 1rem #00000aa1);
+  justify-self: center;
+}

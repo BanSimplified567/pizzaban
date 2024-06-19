@@ -1,0 +1,96 @@
+@media screen and (max-width:1024px) {
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about {
+    text-align: center;
+  }
+
+  .aboutPizzaBanImage {
+    width: 50rem;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.aboutPizzaBanImage {
+  object-fit: contain;
+  width: 20rem;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--body-color);
+}
+
+.aboutPizzaBanImage1 {
+  object-fit: cover;
+  width: 300px;
+  height: auto;
+}
+
+.about-customers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.about-collaboration,
+.about-careers {
+  display: flex;
+  margin: 5rem auto;
+}
+
+.about-careersDescription {
+  align-items: start;
+}
+
+.about-collaboration {
+  gap: 2rem;
+  align-items: center;
+}
+
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .aboutPizzaBanImage {
+    width: 500px;
+    height: auto;
+  }
+
+
+  .about-us,
+  .about-customers,
+  .about-careers,
+  .about-collaboration {
+    text-align: center;
+  }
+
+
+  .about-customers,
+  .about-collaboration {
+    place-items: center;
+    flex-direction: column;
+  }
+
+  .about-careers,
+  .about-collaboration {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .images1 {
+    gap: 2rem;
+  }
+}
+
+.images .about-us .images1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
