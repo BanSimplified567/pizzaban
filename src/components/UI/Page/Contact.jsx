@@ -1,9 +1,9 @@
-import './Style/Contact.css'; // Import CSS file
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'; // Import specific icons
-import { Link } from 'react-router-dom';
+import { faEnvelope, faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import './Style/Contact.css'; // Import CSS file
 
 function Contact() {
    return (
@@ -90,9 +90,9 @@ function ContactForm() {
             <div className="contact-input-container textarea">
                <textarea name="message" className="contact-input" placeholder="Message"></textarea>
             </div>
-            <Link to="/contact">
-               <input type="submit" value="Send" className="contact-btn" />
-            </Link>
+            <a className="contact-btn" href="https://www.facebook.com/him.blacklion567/">
+               Send
+            </a>
          </form>
       </div>
    );
