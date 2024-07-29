@@ -41,24 +41,46 @@ body.dark-theme {
 
 .navLinkHeader {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  gap: 2rem;
 }
+
+@media screen and (max-width: 1024px) {
+  .navLinkHeader {
+    flex-direction: column;
+  }
+}
+
 
 .n-NameLogo {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .navLinkPathname {
-  position: relative;
-  height: var(--header-height);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
   align-items: center;
+  column-gap: 3rem;
 }
+
+@media screen and (max-width:1024px) {
+  .navLinkPathname {
+    flex-direction: column;
+  }
+}
+
+.nav__logo {
+  color: var(--primary-color);
+  font-size: var(--font-lg);
+  font-weight: var(--font-semi-bold);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
 
 .navLink {
   position: relative;
@@ -66,6 +88,7 @@ body.dark-theme {
   display: inline-block;
   border-bottom: 2px solid transparent;
   transition: border-color 0.3s ease;
+  margin-bottom: 0.5rem;
 }
 
 .navLink:hover {
@@ -109,43 +132,11 @@ body.dark-theme {
 .navbar-LogoIcon {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
+  gap: 2rem;
 }
 
-@media screen and (min-width: 768px) {
-  .navLinkPathname {
-    column-gap: 2rem;
-  }
-}
 
-@media screen and (max-width: 768px) {
-  .navLinkHeader {
-    font-size: 0.8rem;
-    gap: 2rem;
-    justify-content: space-evenly;
-    margin: 0 auto;
-  }
-
-  .navLinkPathname {
-    column-gap: 1rem;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .navLinkPathname {
-    height: calc(var(--header-height) + 1.5rem);
-  }
-}
-
-.nav__logo {
-  color: var(--primary-color);
-  font-size: var(--font-lg);
-  font-weight: var(--font-semi-bold);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s;
-}
 
 .home__img {
   width: var(--font-xl);
@@ -153,4 +144,34 @@ body.dark-theme {
   border-radius: 50%;
   filter: drop-shadow(0 1rem 1rem #00000aa1);
   justify-self: center;
+}
+
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+  /* Hide by default */
+}
+
+@media screen and (max-width: 1024px) {
+  .dropbtn {
+    display: inline-block;
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    /* Show on smaller screens */
+  }
+
+  .navLinkPathname {
+    display: none;
+    /* Hide navigation links by default */
+    flex-direction: column;
+  }
+
+  .navLinkPathname.show {
+    display: flex;
+    /* Show navigation links when dropdown is open */
+  }
 }

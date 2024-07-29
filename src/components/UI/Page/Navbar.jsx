@@ -7,6 +7,7 @@ import './Style/Navbar.css';
 
 function Navbar() {
    const [darkMode, setDarkMode] = useState(false);
+   const [dropdownOpen, setDropdownOpen] = useState(false);
 
    useEffect(() => {
       if (darkMode) {
@@ -20,35 +21,53 @@ function Navbar() {
       setDarkMode((prevMode) => !prevMode);
    };
 
+   const toggleDropdown = () => {
+      setDropdownOpen((prevOpen) => !prevOpen);
+   };
+
    return (
-      <header className="navLinkHeader container section ">
+      <header className="navLinkHeader container section">
          <NavLink to="/" className="n-NameLogo">
             <img src={PizzaBanLogo} alt="Logo" className="home__img" />
             <h1 className="nav__logo">PizzaBan</h1>
          </NavLink>
-         <nav className="navLinkPathname">
-            <NavLink to="/" className="navLink">
+
+         <button className="dropbtn" onClick={toggleDropdown}>
+            <svg
+               width="46"
+               height="46"
+               fill="currentColor"
+               viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg"
+            >
+               <path d="M3 18h18v-2H3v2Zm0-5h18v-2H3v2Zm0-7v2h18V6H3Z"></path>
+            </svg>
+         </button>
+
+         <nav className={`navLinkPathname ${dropdownOpen ? 'show' : ''}`}>
+            <NavLink to="/" className="navLink" onClick={toggleDropdown}>
                Home
                <span className="tooltip-text">Go to Home</span>
             </NavLink>
-            <NavLink to="/menu" className="navLink">
+            <NavLink to="/menu" className="navLink" onClick={toggleDropdown}>
                Menu
                <span className="tooltip-text">See our Menu</span>
             </NavLink>
-            <NavLink to="/service" className="navLink">
+            <NavLink to="/service" className="navLink" onClick={toggleDropdown}>
                Service
                <span className="tooltip-text">Our Services</span>
             </NavLink>
-            <NavLink to="/about" className="navLink">
+            <NavLink to="/about" className="navLink" onClick={toggleDropdown}>
                About
                <span className="tooltip-text">About Us</span>
             </NavLink>
-            <NavLink to="/contact" className="navLink">
+            <NavLink to="/contact" className="navLink" onClick={toggleDropdown}>
                Contact
                <span className="tooltip-text">Contact Us</span>
             </NavLink>
+
             <div className="navbar-LogoIcon">
-               <NavLink to="/cart" className="navLink">
+               <NavLink to="/cart" className="navLink" onClick={toggleDropdown}>
                   <svg
                      width={26}
                      height={26}
@@ -60,7 +79,7 @@ function Navbar() {
                   </svg>
                   <span className="tooltip-text">View Cart</span>
                </NavLink>
-               <NavLink to="/account" className="navLink">
+               <NavLink to="/account" className="navLink" onClick={toggleDropdown}>
                   <svg
                      width={26}
                      height={26}
