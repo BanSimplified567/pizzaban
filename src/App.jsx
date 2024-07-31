@@ -3,6 +3,8 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
+import { ToastContainer } from 'react-toastify';
+
 import Account from './components/UI/Account/Account.jsx';
 import Menu from './components/UI/Order/Menu.jsx';
 import About from './components/UI/Page/About.jsx';
@@ -17,10 +19,10 @@ function RootLayout() {
    return (
       <div className="root">
          <Navbar />
-
          <main className="main">
             <Outlet />
          </main>
+         <ToastContainer />
       </div>
    );
 }
